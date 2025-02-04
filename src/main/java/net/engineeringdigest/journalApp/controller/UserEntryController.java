@@ -2,6 +2,7 @@ package net.engineeringdigest.journalApp.controller;
 
 import net.engineeringdigest.journalApp.entity.UserEntry;
 import net.engineeringdigest.journalApp.services.UserEntryService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,21 @@ public class UserEntryController {
         return new ResponseEntity<>(usersEntries,HttpStatus.OK
         );
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable ObjectId id){
+        userEntryService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+//    @GetMapping("/{username}")
+//    public ResponseEntity<?> findUser(@PathVariable String userName){
+//        UserEntry usersEntries=userEntryService.findByUserName(userName);
+//        if(usersEntries==null){
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//        return new ResponseEntity<>(usersEntries,HttpStatus.OK);
+//    }
 
     @PostMapping
     public ResponseEntity<?> createNewUser(@RequestBody UserEntry userEntry){

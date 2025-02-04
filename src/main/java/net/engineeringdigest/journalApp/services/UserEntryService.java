@@ -37,5 +37,8 @@ public class UserEntryService {
     public void saveEntry(UserEntry userEntry){
         userRepository.save(userEntry);
     }
+
+    //updateEntry
+
 }
 
