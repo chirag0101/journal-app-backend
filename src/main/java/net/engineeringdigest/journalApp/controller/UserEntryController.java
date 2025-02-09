@@ -44,7 +44,7 @@ public class UserEntryController {
     public ResponseEntity<?> createNewUser(@RequestBody UserEntry userEntry){
         try{
             userEntryService.createNewUser(userEntry);
-            return new ResponseEntity<>(userEntry,HttpStatus.OK);
+            return new ResponseEntity<>(userEntry,HttpStatus.CREATED);
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

@@ -25,7 +25,7 @@ public class JournalEntryController {
   @PostMapping("/{userName}")
   public ResponseEntity<?> createJournal(@PathVariable String userName,@RequestBody JournalEntry journalEntry){
     journalEntryService.createNewJournal(journalEntry,userName);
-    return new ResponseEntity<>(HttpStatus.OK);
+    return new ResponseEntity<>(HttpStatus.CREATED);
   }
 
   @GetMapping
@@ -48,7 +48,7 @@ public class JournalEntryController {
     }catch (Exception e){
       System.out.println(e);
     }
-    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
   }
 
   @DeleteMapping("/{userName}/{id}")

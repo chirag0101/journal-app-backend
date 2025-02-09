@@ -32,6 +32,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -40,12 +44,12 @@
 			<artifactId>jakarta.persistence-api</artifactId>
 			<version>2.2.3</version>
 		</dependency>
-			<dependency>
+		<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>1.18.36</version>
 				<scope>provided</scope>
-			</dependency>
+		</dependency>
 <!--		<dependency>-->
 <!--			<groupId>net.engineeringdigest</groupId>-->
 <!--			<artifactId>journalApp</artifactId>-->

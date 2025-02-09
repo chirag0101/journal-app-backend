@@ -1,0 +1,6 @@
+Authentication: giving permissions if someone can acces certain api/data (login),
+                the process of verifying a user's identity.
+
+Authorization: if given certain permissions what can a certain user can do,
+               i.e. only add/delete or bounded to some work
+               providing certain privileges to an user.
