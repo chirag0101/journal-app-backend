@@ -6,11 +6,12 @@ import net.engineeringdigest.journalApp.repository.JournalRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Component  //this class is stored in IOC and used as dependency injection wherever required
 public class JournalEntryService {
     @Autowired
     private JournalRepository journalRepository;
@@ -18,6 +19,7 @@ public class JournalEntryService {
     private UserEntryService userEntryService;
 
     //create
+    @Transactional //to make the service transactional so that if any failure occurs, nothing happens(Atomicity)
     public void createNewJournal(JournalEntry journalEntry, String userName) {
         try{
             UserEntry user=userEntryService.findByUserName(userName);
